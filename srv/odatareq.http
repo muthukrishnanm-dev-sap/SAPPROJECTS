@@ -1,0 +1,29 @@
+GET http://localhost:4004/odata/v4/library-srv/BooksSet
+###
+GET http://localhost:4004/odata/v4/library-srv/BooksSet(33333333-cccc-4ddd-eeee-000000000003)
+
+####
+POST http://localhost:4004/odata/v4/library-srv/BooksSet
+Content-Type: application/json
+
+{
+  "Title": "The Art of Clean Code",
+  "Author": "Sarah Thompson",
+  "Price": 1419.99,
+  "PublishedDate": "2024-11-15T10:30:00Z",
+  "digitalCopy": true
+}
+###########
+
+PUT http://localhost:4004/odata/v4/library-srv/BooksSet(95c1db45-352a-4eac-ac76-0837a737df82)
+Content-Type: application/json
+
+{ 
+  "Title": "PUT The Art of Clean Code",
+  "Author": "PUT Sarah Thompson",
+  "Price": 1499.99,
+  "PublishedDate": "2022-11-15T10:30:00Z",
+  "digitalCopy": false
+  }
+###
+DELETE http://localhost:4004/odata/v4/library-srv/BooksSet(95c1db45-352a-4eac-ac76-0837a737df82)
