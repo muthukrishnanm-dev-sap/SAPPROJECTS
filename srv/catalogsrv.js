@@ -7,7 +7,7 @@ module.exports = srv =>{
     //create : Insert
     //update : update 
     //delete : delete */
-    srv.on('READ','BooksSet',async (req,resp)=>{
+/*     srv.on('READ','BooksSet',async (req,resp)=>{
 
         results = [];
         results = await db.run([
@@ -16,7 +16,7 @@ module.exports = srv =>{
         ]);
         return results;
     });
-
+ */
     //CREATE
     srv.before('CREATE','BooksSet',req=>{
         if(req.data.Price < 0)
@@ -58,9 +58,9 @@ module.exports = srv =>{
                });
         return results;
     });
-    srv.after('UPDATE','BooksSet',(data,req)=>{
+/*     srv.after('UPDATE','BooksSet',(data,req)=>{
         console.log(`Books updated : ${data.ID}`);
-    });
+    }); */
     //DELETE
     srv.on('DELETE','BooksSet',async req=>{
         results=[];
